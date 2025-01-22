@@ -1,0 +1,17 @@
+<h1>Pets<h1>
+
+<div>
+  <%= link_to 'All Pets', pets_path %> |
+  <%= link_to 'Dogs', pets_path(pet_type: 'Dog') %> |
+  <%= link_to 'Cats', pets_path(pet_type: 'Cat') %> |
+  <%= link_to 'Birds', pets_path(pet_type: 'Bird') %>
+</div>
+
+<ul>
+  <% @pets.each do |pet| %>
+    <li><strong>Name:</strong> <%= pet.pet_name %> |
+        <strong>Type:</strong> <%= pet.pet_type %> |
+        <%= link_to 'See Details', pet_path(pet) %>
+    </li>
+  <% end %>
+</ul>
