@@ -1,12 +1,31 @@
-.navbar-lewagon {
+.navbar-petsmatch {
   justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-petsmatch .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-petsmatch .navbar-brand img {
   width: 40px;
+}
+
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 50px;
+  img {
+      width: 100px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+
+  }
+
+
 }
