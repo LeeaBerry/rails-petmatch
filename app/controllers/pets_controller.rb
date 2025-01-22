@@ -6,7 +6,7 @@ class PetsController < ApplicationController
     else
       @pets = Pet.all  # else shows ALL pets
     end
-end
+  end
 
   def show
     @pet = Pet.find(params[:id])
