@@ -2,12 +2,12 @@
   <h1>Pet Show page</h1>
 
 <ul>
-  <li><h2>Pet name:  <%= @pet.pet_name %></h2></li>
-  <li><h2>Pet type: <%= @pet.pet_type %></h2></li>
-  <li><h2>breed<%= @pet.pet_breed %></h2></li>
+  <li><h2>pet name:  <%= @pet.pet_name %></h2></li>
+  <li><h2>pet type: <%= @pet.pet_type %></h2></li>
+  <li><h2>breed: <%= @pet.pet_breed %></h2></li>
   <li><h2>about <%= @pet.pet_name %>: <%= @pet.pet_description %></h2></li>
-  <li><h2>Pet region <%= @pet.pet_region %></h2></li>
-  <li><h2>Image<%= @pet.pet_image %></h2></li>
+  <li><h2>pet region: <%= @pet.pet_region %></h2></li>
+  <li><h2>Image: <%= @pet.pet_image %></h2></li>
 </ul>
 </div>
 
@@ -20,5 +20,3 @@
     <%= f.button :submit, "Confirm Booking", class: "btn btn-primary" %>
   </div>
 <% end %>
-
-<%= link_to "Browse Pets", pets_path %>
