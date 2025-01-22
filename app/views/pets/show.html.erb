@@ -10,3 +10,15 @@
   <li><h2>Image<%= @pet.pet_image %></h2></li>
 </ul>
 </div>
+
+<h1>Booking form</h1>
+
+<%= simple_form_for [@pet, @booking] do |f| %>
+  <%= f.input :booking_startdate, as: :date, label: "Start Date", required: true %>
+  <%= f.input :booking_enddate, as: :date, label: "End Date", required: true %>
+  <div>
+    <%= f.button :submit, "Confirm Booking", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Link to pet", pet_path, class: "back-link" %>
