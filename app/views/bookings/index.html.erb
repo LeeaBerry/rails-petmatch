@@ -1,0 +1,15 @@
+<h1>MY Bookings</h1>
+
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <strong>Pet Name:</strong> <%= booking.pet.pet_name %>
+      <strong>Description:</strong> <%= booking.pet.pet_description %>
+      <strong>Start Date:</strong> <%= booking.booking_startdate %>
+      <strong>End Date:</strong> <%= booking.booking_enddate %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Find Your Furry Friend', pets_path %>
