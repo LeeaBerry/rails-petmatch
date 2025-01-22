@@ -28,16 +28,16 @@ users.each do |user|
 end
 
 pets = [
-  { pet_name: "Buddy", user: User.all[0], pet_type: "Dog", pet_breed: "Golden Retriever", pet_description: "Friendly and energetic", pet_region: "London", pet_image: "https://via.placeholder.com/150/FFCC00" },
-  { pet_name: "Mittens", user: User.all[1], pet_type: "Cat", pet_breed: "Siamese", pet_description: "Playful and curious", pet_region: "Manchester", pet_image: "https://via.placeholder.com/150/FF0000" },
-  { pet_name: "Charlie", user: User.all[2], pet_type: "Dog", pet_breed: "Beagle", pet_description: "Loyal and friendly", pet_region: "Birmingham", pet_image: "https://via.placeholder.com/150/FF9966" },
-  { pet_name: "Luna", user: User.all[3], pet_type: "Cat", pet_breed: "Bengal", pet_description: "Active and playful", pet_region: "Glasgow", pet_image: "https://via.placeholder.com/150/3366FF" },
-  { pet_name: "Max", user: User.all[4], pet_type: "Dog", pet_breed: "Labrador", pet_description: "Gentle and friendly", pet_region: "Liverpool", pet_image: "https://via.placeholder.com/150/33FF66" },
-  { pet_name: "Coco", user: User.all[5], pet_type: "Bird", pet_breed: "Cockatiel", pet_description: "Chirpy and colorful", pet_region: "Leeds", pet_image: "https://via.placeholder.com/150/FFFF00" },
-  { pet_name: "Daisy", user: User.all[6], pet_type: "Dog", pet_breed: "Poodle", pet_description: "Intelligent and active", pet_region: "Bristol", pet_image: "https://via.placeholder.com/150/CC66FF" },
-  { pet_name: "Shadow", user: User.all[7], pet_type: "Cat", pet_breed: "Persian", pet_description: "Quiet and affectionate", pet_region: "Sheffield", pet_image: "https://via.placeholder.com/150/666666" },
-  { pet_name: "Bella", user: User.all[8], pet_type: "Dog", pet_breed: "German Shepherd", pet_description: "Protective and loyal", pet_region: "Edinburgh", pet_image: "https://via.placeholder.com/150/FF3333" },
-  { pet_name: "Oliver", user: User.all[9], pet_type: "Cat", pet_breed: "Ragdoll", pet_description: "Relaxed and friendly", pet_region: "Cardiff", pet_image: "https://via.placeholder.com/150/00CCCC" }
+  { pet_name: "Buddy", user: User.all[0], pet_type: "Dog", pet_breed: "Golden Retriever", pet_description: "Friendly and energetic", pet_region: "London", pet_image: "https://i0.wp.com/brucesdoggydaycare.co.uk/wp-content/uploads/2025/01/1985c029d583778314bbd1add6c345cf-1200x0-c-default.jpg?ssl=1" },
+  { pet_name: "Mittens", user: User.all[1], pet_type: "Cat", pet_breed: "Siamese", pet_description: "Playful and curious", pet_region: "Manchester", pet_image: "https://www.thesprucepets.com/thmb/kDcQES0eO7DnfjZ5CBmkfOrxnyg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/facts-about-siamese-cats-4173491-hero-5a607df9e57b40a58c803a76859b6694.jpg" },
+  { pet_name: "Charlie", user: User.all[2], pet_type: "Dog", pet_breed: "Beagle", pet_description: "Loyal and friendly", pet_region: "Birmingham", pet_image: "https://www.beaglewelfare.org.uk/wp-content/uploads/2024/10/IMG_0706-2-2.jpeg" },
+  { pet_name: "Luna", user: User.all[3], pet_type: "Cat", pet_breed: "Bengal", pet_description: "Active and playful", pet_region: "Glasgow", pet_image: "https://preview.redd.it/aj4lntrektk11.jpg?auto=webp&s=fb2524f268cec9e4d3d3aee7efd72ebb2bfbb1ce" },
+  { pet_name: "Max", user: User.all[4], pet_type: "Dog", pet_breed: "Labrador", pet_description: "Gentle and friendly", pet_region: "Liverpool", pet_image: "https://i0.wp.com/brucesdoggydaycare.co.uk/wp-content/uploads/2025/01/e2438d0831f29bfc60739ba9d6494a96-1200x0-c-default.jpg?ssl=1" },
+  { pet_name: "Coco", user: User.all[5], pet_type: "Bird", pet_breed: "Cockatiel", pet_description: "Chirpy and colorful", pet_region: "Leeds", pet_image: "https://static.wixstatic.com/media/630c39_646cdf504ba34dc689b85ef57bf503da~mv2.jpg/v1/fill/w_980,h_1020,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/630c39_646cdf504ba34dc689b85ef57bf503da~mv2.jpg" },
+  { pet_name: "Daisy", user: User.all[6], pet_type: "Dog", pet_breed: "Poodle", pet_description: "Intelligent and active", pet_region: "Bristol", pet_image: "https://image.petmd.com/files/styles/978x550/public/2023-01/toy-poodle.jpg?w=2048&q=75" },
+  { pet_name: "Shadow", user: User.all[7], pet_type: "Cat", pet_breed: "Persian", pet_description: "Quiet and affectionate", pet_region: "Sheffield", pet_image: "https://www.thesprucepets.com/thmb/TU314sIYpY5NNX0trZmLBpbflb4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/persian-cats-gallery-4121944-hero-f5c237b8c6404655afb1e1bbae219ba5.jpg" },
+  { pet_name: "Bella", user: User.all[8], pet_type: "Dog", pet_breed: "German Shepherd", pet_description: "Protective and loyal", pet_region: "Edinburgh", pet_image: "https://petzpark.com.au/cdn/shop/articles/German-Shepherd-Puppies_900x.jpg?v=1673894491" },
+  { pet_name: "Oliver", user: User.all[9], pet_type: "Cat", pet_breed: "Ragdoll", pet_description: "Relaxed and friendly", pet_region: "Cardiff", pet_image: "https://images.litter-robot.com/media/magefan_blog/david-brooke-ragdoll_copy.jpg" }
 ]
 pets.each do |pet|
   Pet.create!(pet)
