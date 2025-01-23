@@ -1,0 +1,22 @@
+.banner {
+  // background-color: #fef2e3;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  padding-top: 60px;
+
+  h1 {
+    font-size: 50px;
+    color: black
+  }
+
+  h3 {
+    color: white;
+    margin-bottom: 30px;
+  }
+
+}

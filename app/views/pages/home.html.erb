@@ -1,8 +1,7 @@
-
-
-  <h1>Pet Match</h1>
-  <p>Welcome to Petmatch! Discover and borrow your favorite pets for unforgettable moments.</p>
-
-
-
-<%= link_to "Find Your Furry Friend", pets_path, class: "btn btn-success" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('<%= image_path "banner.png" %>')">
+  <div>
+    <h1>Pet Match</h1>
+    <h3>Discover and borrow your favorite pets for unforgettable moments. </h3>
+    <%= link_to "Find Your Furry Friend", pets_path, class: "btn btn-success" %>
+  </div>
+</div>
