@@ -1,30 +1,52 @@
 <div class="container">
-  <h1>Meet <%= @pet.pet_name %></h1>
+  <h1 class="text-left mb-4 mt-3"></h1>
 
-  <div class="card mb-4 shadow-lg rounded border-15">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-4">
-          <%= image_tag @pet.pet_image, class: "img-fluid rounded" if @pet.pet_image.present? %>
-        </div>
-        <div class="col-md-8">
+  <div class="mb-4 text-left">
+  <%= link_to pets_path do %>
+    <%= image_tag 'paw.png', class: 'mx-2', style: 'max-width: 100px;' %>
+  <% end %>
+  <%= link_to pets_path(pet_type: 'Dog') do %>
+    <%= image_tag 'dog.png', class: 'mx-2', style: 'max-width: 100px;' %>
+  <% end %>
+  <%= link_to pets_path(pet_type: 'Cat') do %>
+    <%= image_tag 'cat.png', class: 'mx-2', style: 'max-width: 100px;' %>
+  <% end %>
+  <%= link_to pets_path(pet_type: 'Bird') do %>
+    <%= image_tag 'bird.png', class: 'mx-2', style: 'max-width: 100px;' %>
+  <% end %>
+</div>
+
+<div class="container">
+  <h1 class="text-center md-8 mb-4" style="margin-top: 2rem"; >Meet <%= @pet.pet_name %></h1>
+
+  <div class="card mb-4 shadow-lg rounded border-0">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <%= image_tag @pet.pet_image, class: "img-fluid rounded-start" if @pet.pet_image.present? %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
           <h2 class="card-title"><%= @pet.pet_name %></h2>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled mb-5">
             <li><strong>Type:</strong> <%= @pet.pet_type %></li>
             <li><strong>Breed:</strong> <%= @pet.pet_breed %></li>
             <li><strong>Region:</strong> <%= @pet.pet_region %></li>
-            <li class="mt-3"><%= @pet.pet_description %></li>
+            <li class="mt-3 text-muted"><%= @pet.pet_description %></li>
           </ul>
-          <button id="show-booking-form" class="btn btn-success mt-3">Book Now</button>
+          <button id="show-booking-form" class="btn btn-success btn-lg shadow-sm mt-5">
+            <i class="bi bi-calendar-check"></i> Book Now
+          </button>
         </div>
       </div>
     </div>
   </div>
+</div>
 
+<div class="container">
 <div id="booking-form" class="mt-4 p-4 border rounded shadow" style="display: none; background-color: #f9f9f9;">
   <h2 class="mb-4">Book with <%= @pet.pet_name %></h2>
   <%= simple_form_for [@pet, @booking], html: { class: "needs-validation" } do |f| %>
-    <div class="mb-3">
+    <div class="mb-">
       <%= f.input :booking_startdate, as: :date, label: "Start Date", required: true, input_html: { class: "form-control", placeholder: "Select a start date" } %>
     </div>
     <div class="mb-3">
@@ -34,6 +56,7 @@
       <%= f.button :submit, "Confirm Booking", class: "btn btn-success" %>
     </div>
   <% end %>
+</div>
 </div>
 
 <script>
