@@ -44,16 +44,16 @@ pets.each do |pet|
 end
 
 bookings = [
-  { pet: Pet.all[0], user: User.all[1], booking_startdate: "2025-02-01", booking_enddate: "2025-02-07" },
-  { pet: Pet.all[1], user: User.all[2], booking_startdate: "2025-02-05", booking_enddate: "2025-02-10" },
-  { pet: Pet.all[2], user: User.all[3], booking_startdate: "2025-02-10", booking_enddate: "2025-02-15" },
-  { pet: Pet.all[3], user: User.all[4], booking_startdate: "2025-02-15", booking_enddate: "2025-02-20" },
-  { pet: Pet.all[4], user: User.all[5], booking_startdate: "2025-02-20", booking_enddate: "2025-02-25" },
-  { pet: Pet.all[5], user: User.all[6], booking_startdate: "2025-02-25", booking_enddate: "2025-03-01" },
-  { pet: Pet.all[6], user: User.all[7], booking_startdate: "2025-03-01", booking_enddate: "2025-03-05" },
-  { pet: Pet.all[7], user: User.all[8], booking_startdate: "2025-03-05", booking_enddate: "2025-03-10" },
-  { pet: Pet.all[8], user: User.all[9], booking_startdate: "2025-03-10", booking_enddate: "2025-03-15" },
-  { pet: Pet.all[9], user: User.all[0], booking_startdate: "2025-03-15", booking_enddate: "2025-03-20" }
+  { pet: Pet.all[0], user: User.all[1], booking_startdate: Date.today, booking_enddate: Date.today+1 },
+  # { pet: Pet.all[1], user: User.all[2], booking_startdate: 2025-02-05, booking_enddate: 2025-02-10 },
+  # { pet: Pet.all[2], user: User.all[3], booking_startdate: 2025-02-10, booking_enddate: 2025-02-15 },
+  # { pet: Pet.all[3], user: User.all[4], booking_startdate: 2025-02-15, booking_enddate: 2025-02-20 },
+  # { pet: Pet.all[4], user: User.all[5], booking_startdate: 2025-02-20, booking_enddate: 2025-02-25 },
+  # { pet: Pet.all[5], user: User.all[6], booking_startdate: 2025-02-25, booking_enddate: 2025-03-01 },
+  # { pet: Pet.all[6], user: User.all[7], booking_startdate: 2025-03-01, booking_enddate: 2025-03-05 },
+  # { pet: Pet.all[7], user: User.all[8], booking_startdate: 2025-03-05, booking_enddate: 2025-03-10 },
+  # { pet: Pet.all[8], user: User.all[9], booking_startdate: 2025-03-10, booking_enddate: 2025-03-15 },
+  # { pet: Pet.all[9], user: User.all[0], booking_startdate: 2025-03-15, booking_enddate: 2025-03-20 }
 ]
 bookings.each do |booking|
   Booking.create!(booking)

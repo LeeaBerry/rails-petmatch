@@ -1,14 +1,15 @@
 
 
-<h2>Your Bookings</h2>
+<h1>Your Bookings</h2>
 
-<% @bookings.each do |booking| %>
-  <div>
-    <h3><%= booking.pet.pet_name %> (<%= booking.pet.pet_type %>)</h3>
-    <p><strong>From:</strong> <%= booking.booking_startdate %></p>
-    <p><strong>To:</strong> <%= booking.booking_enddate %></p>
-    <%= link_to "Cancel Booking", booking_path(booking), data:{ turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  </div>
+<% if @bookings.any? %>
+  <% @bookings.each do |booking| %>
+    <div>
+      <h3><%= booking.pet.pet_name %> (<%= booking.pet.pet_type %>)</h3>
+      <p><strong>From:</strong> <%= booking.booking_startdate %></p>
+      <p><strong>To:</strong> <%= booking.booking_enddate %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p>You have no bookings yet.</p>
 <% end %>
-
-<%= link_to 'Find Your Furry Friend', pets_path %>
