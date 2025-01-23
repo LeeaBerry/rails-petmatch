@@ -12,16 +12,16 @@ Pet.destroy_all
 User.destroy_all
 
 users = [
-  { user_name: "jdoe1", region: "London", first_name: "John", last_name: "Doe", email_address: "jdoe1@example.com" },
-  { user_name: "asmith2", region: "Manchester", first_name: "Anna", last_name: "Smith", email_address: "asmith2@example.com" },
-  { user_name: "bwilliams3", region: "Birmingham", first_name: "Brian", last_name: "Williams", email_address: "bwilliams3@example.com" },
-  { user_name: "cjohnson4", region: "Glasgow", first_name: "Catherine", last_name: "Johnson", email_address: "cjohnson4@example.com" },
-  { user_name: "dthomas5", region: "Liverpool", first_name: "David", last_name: "Thomas", email_address: "dthomas5@example.com" },
-  { user_name: "emiller6", region: "Leeds", first_name: "Emma", last_name: "Miller", email_address: "emiller6@example.com" },
-  { user_name: "fwilson7", region: "Bristol", first_name: "Frank", last_name: "Wilson", email_address: "fwilson7@example.com" },
-  { user_name: "gmoore8", region: "Sheffield", first_name: "Grace", last_name: "Moore", email_address: "gmoore8@example.com" },
-  { user_name: "hlee9", region: "Edinburgh", first_name: "Henry", last_name: "Lee", email_address: "hlee9@example.com" },
-  { user_name: "ijones10", region: "Cardiff", first_name: "Isabel", last_name: "Jones", email_address: "ijones10@example.com" }
+  { username: "jdoe1", region: "London", first_name: "John", last_name: "Doe", email: "jdoe1@example.com", password: "123456"},
+  { username: "asmith2", region: "Manchester", first_name: "Anna", last_name: "Smith", email: "asmith2@example.com", password: "123456" },
+  { username: "bwilliams3", region: "Birmingham", first_name: "Brian", last_name: "Williams", email: "bwilliams3@example.com", password: "123456" },
+  { username: "cjohnson4", region: "Glasgow", first_name: "Catherine", last_name: "Johnson", email: "cjohnson4@example.com", password: "123456" },
+  { username: "dthomas5", region: "Liverpool", first_name: "David", last_name: "Thomas", email: "dthomas5@example.com", password: "123456" },
+  { username: "emiller6", region: "Leeds", first_name: "Emma", last_name: "Miller", email: "emiller6@example.com", password: "123456" },
+  { username: "fwilson7", region: "Bristol", first_name: "Frank", last_name: "Wilson", email: "fwilson7@example.com", password: "123456" },
+  { username: "gmoore8", region: "Sheffield", first_name: "Grace", last_name: "Moore", email: "gmoore8@example.com", password: "123456" },
+  { username: "hlee9", region: "Edinburgh", first_name: "Henry", last_name: "Lee", email: "hlee9@example.com", password: "123456" },
+  { username: "ijones10", region: "Cardiff", first_name: "Isabel", last_name: "Jones", email: "ijones10@example.com", password: "123456" }
 ]
 users.each do |user|
   User.create!(user)
