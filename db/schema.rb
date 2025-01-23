@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_21_131208) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_23_114309) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.date "booking_startdate"
-    t.date "booking_enddate"
-    t.bigint "user_id", null: false
+    t.string "booking_startdate"
+    t.string "booking_enddate"
     t.bigint "pet_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pet_id"], name: "index_bookings_on_pet_id"
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_21_131208) do
     t.string "pet_name"
     t.string "pet_type"
     t.string "pet_breed"
-    t.text "pet_description"
+    t.string "pet_description"
     t.string "pet_region"
     t.string "pet_image"
     t.bigint "user_id", null: false
@@ -39,13 +39,19 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_21_131208) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_name"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
     t.string "region"
     t.string "first_name"
     t.string "last_name"
-    t.string "email_address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bookings", "pets"
