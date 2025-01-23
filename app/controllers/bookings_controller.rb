@@ -1,37 +1,25 @@
 class BookingsController < ApplicationController
-  before_action :set_pet, only: [:new, :create]
 
-  def new
-    @booking = Booking.new
-    @booking.user = User.first
+  def index
+    @bookings = current_user.bookings
   end
 
   def create
-    @booking = @pet.bookings.build(booking_params)
-    @booking.user = current_user # Assuming a `current_user` method
+    # Create a new booking for the current user
+    @booking = current_user.bookings.new(booking_params)
+    @booking.pet_id = params[:pet_id] # Associate the booking with a specific pet
 
     if @booking.save
-      redirect_to pet_path(@pet), notice: "Booking confirmed!"
+      redirect_to bookings_path, notice: "Booking was successfully created!"
     else
-      render :new, alert: "Unable to book. Please try again."
+      render :new, alert: "There was an error creating the booking."
     end
-  end
-
-  def index
-    @bookings = current_user.bookings # List bookings for the logged-in user
   end
 
   private
 
-  def current_user
-    @user = User.find(params[:user_id])
-  end
-
-  def set_pet
-    @pet = Pet.find(params[:pet_id])
-  end
-
   def booking_params
     params.require(:booking).permit(:booking_startdate, :booking_enddate)
   end
+
 end
