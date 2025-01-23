@@ -7,6 +7,17 @@
   <%= link_to 'Birds', pets_path(pet_type: 'Bird') %>
 </div>
 
+<div class="card-product">
+  <% @pets.each do |pet| %>
+    <img src=<%= pet.pet_image %>/>
+    <div class="card-product-infos">
+      <h2><%= pet.pet_name %></h2>
+      <p> A <strong><%= pet.pet_breed %></strong> from <strong><%= pet.pet_region %></strong>.</p>
+    </div>
+  <% end %>
+</div>
+
+
 <ul>
   <% @pets.each do |pet| %>
     <li><strong>Name:</strong> <%= pet.pet_name %> |
