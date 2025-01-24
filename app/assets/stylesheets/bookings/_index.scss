@@ -6,9 +6,9 @@ body {
   padding: 0;
 }
 
-.booking-title-background{
-  background: #fef9f6;
-}
+// .booking-title-background{
+//   background: #fef9f6;
+// }
 .booking-title h1{
   font-size: 3rem;
   font-weight: bold; /* Make it stand out */
@@ -21,17 +21,21 @@ body {
 
 .booking-main{
   background: #D7C1E8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 /* Styling for the Booking List */
-.booking-container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: #fef9f6;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
+// .booking-container {
+//   max-width: 800px;
+//   margin: 0 auto;
+//   background: #fef9f6;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   padding: 20px;
+// }
 
 .booking-item {
   display: flex;
@@ -42,6 +46,7 @@ body {
   border-radius: 8px;
   margin-bottom: 15px;
   background: #ffffff;
+  width: 50%;
 }
 
 .pet-image {
