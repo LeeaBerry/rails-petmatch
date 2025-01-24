@@ -38,21 +38,4 @@
         </div>
       </div>
     <% end %>
-
-
-
-    <div class="row">
-      <% @pets.each do |pet| %>
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <%= image_tag(pet.pet_image, alt: pet.pet_name, class: "card-img-top") %>
-            <div class="card-body">
-              <h5 class="card-title"><%= pet.pet_name %></h5>
-              <p class="card-text"><%= pet.pet_region %></p>
-              <%= link_to 'See Details', pet_path(pet), class: 'btn btn-primary' %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
 </div>
