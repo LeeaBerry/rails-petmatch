@@ -1,4 +1,5 @@
-<div class="container">
+<div class="booking-title-background">
+
   <h1 class="text-left mb-4 mt-3"></h1>
 
   <div class="mb-4 text-left">
@@ -35,28 +36,31 @@
           </ul>
           <button id="show-booking-form" class="btn btn-success btn-lg shadow-sm mt-5">
             <i class="bi bi-calendar-check"></i> Book Now
-          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container">
 <div id="booking-form" class="mt-4 p-4 border rounded shadow" style="display: none; background-color: #f9f9f9;">
   <h2 class="mb-4">Book with <%= @pet.pet_name %></h2>
   <%= simple_form_for [@pet, @booking], html: { class: "needs-validation" } do |f| %>
-    <div class="mb-">
-      <%= f.input :booking_startdate, as: :date, label: "Start Date", required: true, input_html: { class: "form-control", placeholder: "Select a start date" } %>
+    <div class="mb-3">
+      <%= f.label :booking_startdate, "Start Date", class: "form-label" %>
+      <%= f.date_field :booking_startdate, class: "form-control", value: @booking.booking_startdate %>
     </div>
     <div class="mb-3">
-      <%= f.input :booking_enddate, as: :date, label: "End Date", required: true, input_html: { class: "form-control", placeholder: "Select an end date" } %>
+      <%= f.label :booking_enddate, "End Date", class: "form-label" %>
+      <%= f.date_field :booking_enddate, class: "form-control", value: @booking.booking_enddate %>
     </div>
-    <div class="text-end">
-      <%= f.button :submit, "Confirm Booking", class: "btn btn-success" %>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      <%= f.submit "Confirm Booking", class: "btn btn-success" %>
     </div>
   <% end %>
 </div>
+
+
 </div>
 
 <script>
