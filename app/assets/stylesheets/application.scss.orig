@@ -11,4 +11,3 @@
 @import "components/index";
 @import "pets/index";
 @import "bookings/index";
-@import "pets/show";
