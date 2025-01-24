@@ -1,0 +1,112 @@
+/* General Styling for the Bookings Page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.booking-title-background{
+  background: #fef9f6;
+}
+.booking-title h1{
+  font-size: 3rem;
+  font-weight: bold; /* Make it stand out */
+  color: #4b0082; /* Deep purple */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Add spacing below the heading */
+  padding: 10px;
+}
+
+.booking-main{
+  background: #D7C1E8;
+}
+
+/* Styling for the Booking List */
+.booking-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fef9f6;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.booking-item {
+  display: flex;
+  // align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: #ffffff;
+}
+
+.pet-image {
+  //display: flex;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.booking-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+strong {
+  color: #333;
+}
+
+/* Empty Bookings Message */
+.no-bookings {
+  text-align: center;
+  color: #777;
+  font-size: 1.2rem;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Hover Effect */
+.booking-item:hover {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
+.modal-pet-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.view-details-btn {
+  margin-top: 10px;
+  background-color: #D7C1E8; /*lilac button*/
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  &:hover {
+    background-color: #752cad; /* Darker purple */
+  }
+}
+
+.modal-footer-close-button{
+  border: none;
+  border-radius: 5px;
+  background-color: #D7C1E8; /*lilac button*/
+
+  &:hover {
+    background-color: #752cad; /* Darker purple */
+  }
+}
