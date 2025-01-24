@@ -1,28 +1,49 @@
-<div class="container mt-4" style="width: 1000px;">
-  <h1 class="mb-4">These are your furry bookings</h1>
+<div class="booking-title-background">
+  <div class="booking-title">
+    <h1>These are your furry bookings</h1>
+  </div>
+</div>
 
-  <% if @bookings.any? %>
-    <% @bookings.order(created_at: :desc).each do |booking| %>
-      <div class="card mb-3 shadow-lg">
-        <div class="row g-0">
-          <!-- Pet Image -->
-          <div class="col-md-4">
-            <%= image_tag booking.pet.pet_image, class: "img-fluid rounded-start", alt: booking.pet.pet_name %>
+<div class="booking-main">
+  <div class="booking-container">
+    <% if @bookings.any? %>
+      <% @bookings.each do |booking| %>
+        <div class="booking-item">
+          <img src="<%= booking.pet.pet_image %>" alt="<%= booking.pet.pet_name %>" class="pet-image" />
+          <div class="booking-details">
+            <h3><%= booking.pet.pet_name %> </h3>
+            <p><strong>From:</strong> <%= booking.booking_startdate %></p>
+            <p><strong>To:</strong> <%= booking.booking_enddate %></p>
+          <!-- Trigger the pop-up -->
+            <button class="view-details-btn" data-bs-toggle="modal" data-bs-target="#petModal<%= booking.id %>">
+              View Pet Details
+            </button>
           </div>
-          <!-- Booking Information -->
-          <div class="col-md-8">
-            <div class="card-body">
-              <h3 class="card-title"><%= booking.pet.pet_name %> (<%= booking.pet.pet_type %>)</h3>
-              <p class="card-text">
-                <strong>From:</strong> <%= booking.booking_startdate %><br>
-                <strong>To:</strong> <%= booking.booking_enddate %>
-              </p>
+        </div>
+
+        <!-- Modal for the pet details -->
+        <div class="modal fade" id="petModal<%= booking.id %>" tabindex="-1" aria-labelledby="petModalLabel<%= booking.id %>" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="petModalLabel<%= booking.id %>"><%= booking.pet.pet_name %> </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="<%= booking.pet.pet_image %>" alt="<%= booking.pet.pet_name %>" class="modal-pet-image" />
+                <p><strong>Breed:</strong> <%= booking.pet.pet_breed %></p>
+                <p><strong>Description:</strong> <%= booking.pet.pet_description %></p>
+                <p><strong>Region:</strong> <%= booking.pet.pet_region %></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="modal-footer-close-button btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
+    <% else %>
+      <p>You have no bookings yet.</p>
     <% end %>
-  <% else %>
-    <p class="text-muted">You have no bookings yet.</p>
-  <% end %>
+  </div>
 </div>
