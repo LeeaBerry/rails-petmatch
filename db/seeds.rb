@@ -27,6 +27,8 @@ users.each do |user|
   User.create!(user)
 end
 
+puts "Seeded #{User.count} users"
+
 pets = [
   { pet_name: "Buddy", user: User.all[0], pet_type: "Dog", pet_breed: "Golden Retriever", pet_description: "Friendly and energetic", pet_region: "London", pet_image: "https://i0.wp.com/brucesdoggydaycare.co.uk/wp-content/uploads/2025/01/1985c029d583778314bbd1add6c345cf-1200x0-c-default.jpg?ssl=1" },
   { pet_name: "Mittens", user: User.all[1], pet_type: "Cat", pet_breed: "Siamese", pet_description: "Playful and curious", pet_region: "Manchester", pet_image: "https://images.unsplash.com/photo-1666181839388-2623c19d935e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
@@ -43,6 +45,8 @@ pets.each do |pet|
   Pet.create!(pet)
 end
 
+puts "Seeded #{Pet.count} pets"
+
 bookings = [
   { pet: Pet.all[0], user: User.all[1], booking_startdate: Date.today, booking_enddate: Date.today+1 },
   # { pet: Pet.all[1], user: User.all[2], booking_startdate: 2025-02-05, booking_enddate: 2025-02-10 },
@@ -58,3 +62,5 @@ bookings = [
 bookings.each do |booking|
   Booking.create!(booking)
 end
+
+puts "Seeded #{Booking.count} bookings"
