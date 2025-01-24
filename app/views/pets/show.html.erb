@@ -1,5 +1,5 @@
 <div class="container">
-<div class="booking-title-background">
+<%# <div class="booking-title-background"> %>
 
   <h1 class="text-left mb-4 mt-3"></h1>
 
@@ -18,18 +18,18 @@
   <% end %>
 </div>
 
-
+<div class="row justify-content-center">
   <h1 class="text-center md-8 mb-4" style="margin-top: 2rem;">Meet <%= @pet.pet_name %></h1>
 
-  <div class="card mb-4 shadow-lg rounded border-0">
+  <div class="card mb-4 shadow-lg rounded-6 border-0" style="max-width: 1000px;">
     <div class="row g-0">
       <div class="col-md-4">
         <%= image_tag @pet.pet_image, class: "img-fluid rounded-start" if @pet.pet_image.present? %>
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
+      <div class="col-md-8 rounded-6">
+        <div class="card-body ">
           <h2 class="card-title"><%= @pet.pet_name %></h2>
-          <ul class="list-unstyled mb-5">
+          <ul class="list-unstyled mb-5 rounded-6">
             <li><strong>Type:</strong> <%= @pet.pet_type %></li>
             <li><strong>Breed:</strong> <%= @pet.pet_breed %></li>
             <li><strong>Region:</strong> <%= @pet.pet_region %></li>
@@ -67,10 +67,11 @@
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
           <%= f.submit "Confirm Booking", class: "btn btn-success" %>
         </div>
-        <% end %>
+
       </div>
     </div>
   </div>
+       <% end %>
 </div>
 
 <script>
