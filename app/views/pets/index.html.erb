@@ -1,23 +1,32 @@
 <h1>Pets<h1>
 
 <div>
-  <div>
-    <%= link_to 'All Pets', pets_path %> |
-    <%= link_to 'Dogs', pets_path(pet_type: 'Dog') %> |
-    <%= link_to 'Cats', pets_path(pet_type: 'Cat') %> |
-    <%= link_to 'Birds', pets_path(pet_type: 'Bird') %>
-  </div>
-
-  <div class="cards">
-    <% @pets.each do |pet| %>
-      <div class="card-product">
-        <img src=<%= pet.pet_image %>/>
-        <div>
-          <h2><%= pet.pet_name %></h2>
-          <p> A <strong><%= pet.pet_breed %></strong> from <strong><%= pet.pet_region %></strong>.</p>
-          <%= link_to 'See Details', pet_path(pet) %>
-        </div>
-      </div>
+    <%= link_to pets_path do %>
+       <%= image_tag("paw.png", alt: "Paw", class: "icon") %>
     <% end %>
-  </div>
+    <%= link_to pets_path(pet_type: 'Dog') do %>
+       <%= image_tag("dog.png", alt: "Dog", class: "icon") %>
+    <% end %>
+    <%= link_to pets_path(pet_type: 'Cat') do %>
+       <%= image_tag("cat.png", alt: "Cat", class: "icon") %>
+    <% end %>
+    <%= link_to pets_path(pet_type: 'Bird') do %>
+       <%= image_tag("bird.png", alt: "Bird", class: "icon") %>
+    <% end %>
+
+
+    <div class="row">
+      <% @pets.each do |pet| %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <%= image_tag(pet.pet_image, alt: pet.pet_name, class: "card-img-top") %>
+            <div class="card-body">
+              <h5 class="card-title"><%= pet.pet_name %></h5>
+              <p class="card-text"><%= pet.pet_region %></p>
+              <%= link_to 'See Details', pet_path(pet), class: 'btn btn-primary' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
 </div>
