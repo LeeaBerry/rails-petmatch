@@ -1,21 +1,40 @@
-<h1>Pets<h1>
+<div class="container">
+  <h1 class="text-left mb-4 mt-3">
+    <% if params[:pet_type].present? %>
+      <%= params[:pet_type] %>s
+    <% else %>
+      All Pets
+    <% end %>
+  </h1>
 
-<div>
-  <div>
-    <%= link_to 'All Pets', pets_path %> |
-    <%= link_to 'Dogs', pets_path(pet_type: 'Dog') %> |
-    <%= link_to 'Cats', pets_path(pet_type: 'Cat') %> |
-    <%= link_to 'Birds', pets_path(pet_type: 'Bird') %>
+  <div class="mb-4 text-left">
+    <%= link_to pets_path do %>
+      <%= image_tag 'paw.png', class: 'mx-2', style: 'max-width: 100px;' %>
+    <% end %>
+    <%= link_to pets_path(pet_type: 'Dog') do %>
+      <%= image_tag 'dog.png', class: 'mx-2', style: 'max-width: 100px;' %>
+    <% end %>
+    <%= link_to pets_path(pet_type: 'Cat') do %>
+      <%= image_tag 'cat.png', class: 'mx-2', style: 'max-width: 100px;' %>
+    <% end %>
+    <%= link_to pets_path(pet_type: 'Bird') do %>
+      <%= image_tag 'bird.png', class: 'mx-2', style: 'max-width: 100px;' %>
+    <% end %>
   </div>
 
-  <div class="cards">
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     <% @pets.each do |pet| %>
-      <div class="card-product">
-        <img src=<%= pet.pet_image %>/>
-        <div>
-          <h2><%= pet.pet_name %></h2>
-          <p> A <strong><%= pet.pet_breed %></strong> from <strong><%= pet.pet_region %></strong>.</p>
-          <%= link_to 'See Details', pet_path(pet) %>
+      <div class="col">
+        <div class="card h-100 shadow-lg">
+          <%= image_tag pet.pet_image, class: "card-img-top", alt: pet.pet_name %>
+          <div class="card-body d-flex flex-column h-100">
+            <h5 class="card-title"><%= pet.pet_name %></h5>
+            <p class="card-text text-muted">
+              A <strong><%= pet.pet_breed %></strong> from <strong><%= pet.pet_region %></strong>
+            </p>
+            <%= link_to 'Take a look', pet_path(pet), class: 'btn btn-success mt-auto' %>
+          </div>
         </div>
       </div>
     <% end %>
